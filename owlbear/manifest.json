@@ -1,0 +1,16 @@
+{
+  "name": "Cribmap",
+  "version": "0.3.0",
+  "manifest_version": 1,
+  "author": "fistilis",
+  "description": "Layered GM crib notes for Owlbear Rodeo: hidden pins, NPC tokens with notes and tiered checks, counters, a dial, a timer, and named fog zones. Load AI-authored encounter files and export edits back.",
+  "homepage_url": "https://github.com/fistilis/cribmap",
+  "background_url": "background.html",
+  "action": {
+    "title": "Cribmap",
+    "icon": "icon.svg",
+    "popover": "index.html",
+    "height": 640,
+    "width": 400
+  }
+}

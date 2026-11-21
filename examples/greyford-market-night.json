@@ -1,0 +1,88 @@
+{
+  "title": "Greyford — Market Night (demo)",
+  "notes": "A small original demo for Cribmap. Uses the generic walled-town map and built-in letter tokens.",
+  "map": { "url": "../assets/maps/walled-town.jpg", "width": 3000, "height": 2250, "dpi": 75 },
+  "timerMinutes": 20,
+  "spend": [
+    { "pts": 1, "name": "Small flashback", "desc": "Something you prepared earlier is already in place." },
+    { "pts": 2, "name": "Large flashback", "desc": "A whole prepared plan pays off; play it as a short scene." }
+  ],
+  "dial": {
+    "name": "Town Trust",
+    "start": 0,
+    "minLabel": "Run out of town",
+    "maxLabel": "Local heroes",
+    "labels": { "-2": "Watched closely", "0": "Strangers", "2": "Welcome guests" }
+  },
+  "labels": [
+    { "key": "lbl-hall", "text": "Guildhall", "x": 19.5, "y": 8.2 },
+    { "key": "lbl-inn", "text": "The Lantern & Ladle", "x": 13, "y": 16.3 },
+    { "key": "lbl-square", "text": "Market Square", "x": 21.5, "y": 13.4 },
+    { "key": "lbl-shrine", "text": "Shrine of the Dawn", "x": 27.2, "y": 12.3 }
+  ],
+  "fog": [
+    { "key": "fog-crypt", "title": "Shrine crypt", "x": 22, "y": 1, "w": 10, "h": 6 }
+  ],
+  "pins": [
+    {
+      "key": "gm-howto", "title": "GM: How this demo works", "x": 1, "y": 1, "hidden": true,
+      "notes": "Players have 20 minutes to find out who stole the guild's ledger. Award points with the +N buttons. Reveal the crypt fog only if they find the stair under the shrine.",
+      "checks": []
+    },
+    {
+      "key": "pin-square", "title": "Market Square", "x": 21, "y": 16, "hidden": true,
+      "notes": "Stalls are packing up. A lamplighter saw someone carrying a ledger toward the shrine.",
+      "checks": [
+        {
+          "id": "sq-ask", "skill": "Investigation", "approach": "Ask around the stalls",
+          "any": "Everyone's busy; nobody saw much.",
+          "tiers": [
+            { "dc": 10, "pts": 1, "gain": "Someone in a grey cloak hurried north." },
+            { "dc": 15, "pts": 2, "gain": "The cloak had a guild clasp. It was one of their own." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pin-crypt", "title": "Shrine crypt (fogged)", "x": 26, "y": 3, "hidden": true,
+      "notes": "The ledger is hidden behind a loose ossuary stone.",
+      "checks": []
+    }
+  ],
+  "tokens": [
+    {
+      "key": "npc-oda", "name": "Oda the Lamplighter", "role": "Saw something", "x": 22, "y": 17, "glyph": "O", "color": "gold",
+      "notes": "VIBE (read aloud): A stooped woman with a long brass pole, humming as she lights the last lamps.\nVOICE: Slow, kind, loses her train of thought.\nKNOWS:\n• Grey cloak, heading north, around the second bell.",
+      "checks": [
+        {
+          "id": "oda-talk", "skill": "Persuasion", "approach": "Help her finish her rounds",
+          "any": "She thanks you and wanders off.",
+          "tiers": [
+            { "dc": 10, "pts": 1, "gain": "The cloak went into the shrine, not past it." },
+            { "dc": 14, "pts": 2, "gain": "She recognized the walk: Master Hesk, the guild treasurer." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "npc-hesk", "name": "Master Hesk", "role": "Guild treasurer", "x": 18, "y": 6, "glyph": "H", "color": "purple",
+      "notes": "VIBE (read aloud): A thin man in an expensive coat, counting coins that are already counted.\nVOICE: Clipped and over-polite.\nKNOWS:\n• He hid the ledger himself to cover his own skimming.",
+      "checks": [
+        {
+          "id": "hesk-read", "skill": "Insight", "approach": "Watch him while you mention the shrine",
+          "any": "He's calm and helpful.",
+          "tiers": [
+            { "dc": 13, "pts": 1, "gain": "He flinches at the word 'shrine'." },
+            { "dc": 17, "pts": 2, "gain": "He has crypt dust on his boots." }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "npc-ghost", "name": "The Crypt Warden", "role": "Restless spirit", "x": 27, "y": 3, "glyph": "W", "color": "teal", "hidden": true,
+      "notes": "VIBE (read aloud): A cold light takes the shape of a robed figure. \"Who disturbs the counted dead?\"\nKNOWS:\n• Exactly which stone was moved.",
+      "checks": []
+    }
+  ],
+  "alarms": []
+}
