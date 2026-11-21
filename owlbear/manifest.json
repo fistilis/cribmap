@@ -1,15 +1,13 @@
 {
   "name": "Cribmap",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "manifest_version": 1,
-  "author": "fistilis",
-  "description": "Layered GM crib notes: hidden pins, NPC notes, tiered checks, counters and fog zones from AI-authored encounter files.",
-  "homepage_url": "https://github.com/fistilis/cribmap",
-  "background_url": "background.html",
+  "description": "Layered GM crib notes: hidden pins, NPC notes, tiered checks, counters and fog zones.",
+  "background_url": "/cribmap/owlbear/background.html",
   "action": {
     "title": "Cribmap",
-    "icon": "icon.svg",
-    "popover": "index.html",
+    "icon": "/cribmap/owlbear/icon.svg",
+    "popover": "/cribmap/owlbear/index.html",
     "height": 640,
     "width": 400
   }
